@@ -1,0 +1,8 @@
+<div class="bg-gray-800 flex gap-6 p-4">
+  @for (category of categories; track category?.name) {
+    <div class="flex gap-1 items-center relative py-2" [ngClass]="{'border-b-2 rounded-b-sm border-emerald-600': selectedCategory === category?.category}">
+      <button class="text-white" (click)="onClick(category)">{{category?.name}}</button>
+      <span class="absolute -top-3 -right-3 text-xs text-white" [ngClass]="{'text-emerald-600': selectedCategory === category?.category}">{{category?.totalGames}}</span>
+    </div>
+  }
+</div>

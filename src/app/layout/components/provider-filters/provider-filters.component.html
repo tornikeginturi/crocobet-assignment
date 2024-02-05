@@ -1,0 +1,30 @@
+
+
+<div class="w-full flex justify-between bg-gray-700">
+  <div class="w-10/12">
+    <div class=" flex  px-5 h-12" [ngClass]="{'h-40': providerMenu}">
+      <div class="flex flex-wrap overflow-hidden">
+        <div class="flex">
+          <button class="text-white mr-10 pt-3 px-2 uppercase cursor-pointer">all
+          </button>
+        </div>
+        @for (provider of providers ; track provider?._id) {
+          <div class="flex">
+
+              <button class="text-white mr-10 pt-3 px-2 uppercase cursor-pointer" [ngClass]="{'border-b-2 rounded-b-sm border-emerald-600': provider.provider === selectedProvider}" (click)="onClick(provider?.provider)">{{provider?.name}}
+              </button>
+
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+
+  <div class="w-2/12 flex justify-end text-white pr-5 font-semibold" [ngClass]="{'items-start pt-3': providerMenu}">
+      <button class="flex items-center" (click)="onSeeMore()">
+        See More
+        <img class="ml-2" src="../../../../assets/svg/arrow.svg">
+      </button>
+  </div>
+</div>

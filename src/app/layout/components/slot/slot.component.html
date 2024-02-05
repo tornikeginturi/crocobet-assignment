@@ -1,0 +1,18 @@
+
+
+
+<div class="flex flex-wrap gap-2 w-full h-full py-2">
+  @for (slot of slots; track slot?.game_id) {
+
+    <div class="flex flex-col rounded-b relative group sm:h-44 sm:w-56 w-full overflow-hidden">
+      <img class="object-cover h-32 w-full group-hover:bg-gray-900" [src]="slot?.image" alt="">
+      <div class="py-3 px-5 bg-gray-800 group-hover:bg-gray-700">
+        <span class="text-white font-semibold">{{slot?.name}}</span>
+      </div>
+
+      <div class="absolute invisible group-hover:visible top-14 left-8 ">
+         <button class=" text-white py-1 rounded px-14 bg-green-600">PLAY</button>
+      </div>
+    </div>
+  }
+</div>
